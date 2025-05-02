@@ -1,0 +1,44 @@
+# Conexión a la base de datos
+# Formato: postgresql://[usuario]:[contraseña]@[host]:[puerto]/[base_de_datos]
+CONNECTION_STRING=your-database-connection-string
+
+# Clave anónima de Supabase (anon key)
+SUPABASE_ANON_KEY=your-supabase-anon-key
+
+# Estructura de las tablas
+category,name,attribute,type,nullable,default_value,max_length
+Constraints,admins,2200_25032_1_not_null,CHECK,null,null,null
+Constraints,admins,2200_25032_2_not_null,CHECK,null,null,null
+Constraints,admins,2200_25032_3_not_null,CHECK,null,null,null
+Constraints,admins,2200_25032_4_not_null,CHECK,null,null,null
+Constraints,admins,admins_email_key,UNIQUE,null,null,null
+Constraints,admins,admins_pkey,PRIMARY KEY,null,null,null
+Constraints,categories,2200_25015_1_not_null,CHECK,null,null,null
+Constraints,categories,2200_25015_2_not_null,CHECK,null,null,null
+Constraints,categories,categories_name_key,UNIQUE,null,null,null
+Constraints,categories,categories_pkey,PRIMARY KEY,null,null,null
+Constraints,products,2200_25002_1_not_null,CHECK,null,null,null
+Constraints,products,2200_25002_2_not_null,CHECK,null,null,null
+Constraints,products,2200_25002_4_not_null,CHECK,null,null,null
+Constraints,products,2200_25002_5_not_null,CHECK,null,null,null
+Constraints,products,fk_category,FOREIGN KEY,null,null,null
+Constraints,products,products_pkey,PRIMARY KEY,null,null,null
+Table Info,admins,created_at,timestamp with time zone,YES,(now() AT TIME ZONE 'America/Asuncion'::text),null
+Table Info,admins,email,text,NO,null,null
+Table Info,admins,id,uuid,NO,gen_random_uuid(),null
+Table Info,admins,password,text,NO,null,null
+Table Info,admins,username,text,NO,null,null
+Table Info,categories,created_at,timestamp with time zone,YES,(now() AT TIME ZONE 'America/Asuncion'::text),null
+Table Info,categories,id,uuid,NO,gen_random_uuid(),null
+Table Info,categories,name,text,NO,null,null
+Table Info,categories,updated_at,timestamp with time zone,YES,(now() AT TIME ZONE 'America/Asuncion'::text),null
+Table Info,products,active,boolean,YES,true,null
+Table Info,products,category_id,uuid,NO,null,null
+Table Info,products,created_at,timestamp with time zone,YES,(now() AT TIME ZONE 'America/Asuncion'::text),null
+Table Info,products,description,text,YES,null,null
+Table Info,products,featured,boolean,YES,false,null
+Table Info,products,id,uuid,NO,gen_random_uuid(),null
+Table Info,products,images,ARRAY,YES,'{}'::text[],null
+Table Info,products,name,text,NO,null,null
+Table Info,products,price,integer,NO,null,null
+Table Info,products,updated_at,timestamp with time zone,YES,(now() AT TIME ZONE 'America/Asuncion'::text),null
